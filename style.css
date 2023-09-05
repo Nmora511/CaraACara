@@ -7,6 +7,16 @@ body{
     background: #0D214F;
 }
 
+#icon{
+    width: 40px;
+    height: auto;
+    padding: 0px;
+    cursor: default;
+    display: block; 
+    margin-left: auto; 
+    margin-right: auto;
+}
+
 h1{
     font-size: 40px;
     font-family: 'Nice Honey';
@@ -15,6 +25,7 @@ h1{
 }
 
 img {
+    transition-duration: 0.4s;
     width: 15%;
     height: auto;
     padding: 5px;
@@ -31,6 +42,7 @@ input{
 }
 
 .grayscale {
+    transition-duration: 0.4s;
     filter: grayscale(100%) blur(4px);
 }
 

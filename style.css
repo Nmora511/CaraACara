@@ -1,0 +1,48 @@
+@font-face {
+    font-family: 'Nice Honey';
+    src: url('Nice\ Honey.ttf') format('truetype');
+  }
+
+body{
+    background: #0D214F;
+}
+
+h1{
+    font-size: 40px;
+    font-family: 'Nice Honey';
+    color: white;
+    text-align: center;
+}
+
+img {
+    width: 15%;
+    height: auto;
+    padding: 5px;
+    aspect-ratio: 1/1; 
+    cursor: pointer;
+}
+
+input{
+    display: none;
+}
+
+#user1, #user7, #user13 {
+   padding-left: 3%;
+}
+
+.grayscale {
+    filter: grayscale(100%) blur(4px);
+}
+
+button{
+    border: 0px;
+    color: white;
+    background-color: #b81414;
+    cursor: pointer;
+    transition-duration: 0.4s;
+    border: 2px solid #b81414;
+}
+
+button:hover{
+    background-color: #0D214F;
+}

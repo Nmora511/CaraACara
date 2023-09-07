@@ -10,8 +10,12 @@
     </head>
 
     <body>
+        <button class="button" id="sorteio" onclick="sortearImagem()">Sortear</button>
+        
         <img id="icon" src="icon.png">
         <h1>Cara a Cara</h1>
+
+        <button class="button" id="helpb" onclick="Help('help')">?</button>
         
         <input type="file" id="fileInput1"  accept="image/*" onchange="updateImage('user1', this)">
         <input type="file" id="fileInput2"  accept="image/*" onchange="updateImage('user2', this)">
@@ -32,44 +36,27 @@
         <input type="file" id="fileInput17"  accept="image/*" onchange="updateImage('user17', this)">
         <input type="file" id="fileInput18"  accept="image/*" onchange="updateImage('user18', this)">
 
-        <img id="user1" src="user.jpg" onclick="toggleOpacity('user1')">
-        <img id="user2" src="user.jpg" onclick="toggleOpacity('user2')">
-        <img id="user3" src="user.jpg" onclick="toggleOpacity('user3')">
-        <img id="user4" src="user.jpg" onclick="toggleOpacity('user4')">
-        <img id="user5" src="user.jpg" onclick="toggleOpacity('user5')">
-        <img id="user6" src="user.jpg" onclick="toggleOpacity('user6')">
-        <img id="user7" src="user.jpg" onclick="toggleOpacity('user7')">
-        <img id="user8" src="user.jpg" onclick="toggleOpacity('user8')">
-        <img id="user9" src="user.jpg" onclick="toggleOpacity('user9')">
-        <img id="user10" src="user.jpg" onclick="toggleOpacity('user10')">
-        <img id="user11" src="user.jpg" onclick="toggleOpacity('user11')">
-        <img id="user12" src="user.jpg" onclick="toggleOpacity('user12')">
-        <img id="user13" src="user.jpg" onclick="toggleOpacity('user13')">
-        <img id="user14" src="user.jpg" onclick="toggleOpacity('user14')">
-        <img id="user15" src="user.jpg" onclick="toggleOpacity('user15')">
-        <img id="user16" src="user.jpg" onclick="toggleOpacity('user16')">
-        <img id="user17" src="user.jpg" onclick="toggleOpacity('user17')">
-        <img id="user18" src="user.jpg" onclick="toggleOpacity('user18')">
+        <img class="disappear" id="help" src="help.png" style="pointer-events: none;">
 
-        <button onclick="triggerFileInput('fileInput1')">Imagem 1</button>
-        <button onclick="triggerFileInput('fileInput2')">Imagem 2</button>
-        <button onclick="triggerFileInput('fileInput3')">Imagem 3</button>
-        <button onclick="triggerFileInput('fileInput4')">Imagem 4</button>
-        <button onclick="triggerFileInput('fileInput5')">Imagem 5</button>
-        <button onclick="triggerFileInput('fileInput6')">Imagem 6</button>
-        <button onclick="triggerFileInput('fileInput7')">Imagem 7</button>
-        <button onclick="triggerFileInput('fileInput8')">Imagem 8</button>
-        <button onclick="triggerFileInput('fileInput9')">Imagem 9</button>
-        <button onclick="triggerFileInput('fileInput10')">Imagem 10</button>
-        <button onclick="triggerFileInput('fileInput11')">Imagem 11</button>
-        <button onclick="triggerFileInput('fileInput12')">Imagem 12</button>
-        <button onclick="triggerFileInput('fileInput13')">Imagem 13</button>
-        <button onclick="triggerFileInput('fileInput14')">Imagem 14</button>
-        <button onclick="triggerFileInput('fileInput15')">Imagem 15</button>
-        <button onclick="triggerFileInput('fileInput16')">Imagem 16</button>
-        <button onclick="triggerFileInput('fileInput17')">Imagem 17</button>
-        <button onclick="triggerFileInput('fileInput18')">Imagem 18</button>
+        <img id="user1" src="user.jpg" onclick="toggleOpacity('user1')" oncontextmenu="triggerFileInput('fileInput1'); return false">
+        <img id="user2" src="user.jpg" onclick="toggleOpacity('user2')" oncontextmenu="triggerFileInput('fileInput2'); return false">
+        <img id="user3" src="user.jpg" onclick="toggleOpacity('user3')" oncontextmenu="triggerFileInput('fileInput3'); return false">
+        <img id="user4" src="user.jpg" onclick="toggleOpacity('user4')" oncontextmenu="triggerFileInput('fileInput4'); return false">
+        <img id="user5" src="user.jpg" onclick="toggleOpacity('user5')" oncontextmenu="triggerFileInput('fileInput5'); return false">
+        <img id="user6" src="user.jpg" onclick="toggleOpacity('user6')" oncontextmenu="triggerFileInput('fileInput6'); return false">
+        <img id="user7" src="user.jpg" onclick="toggleOpacity('user7')" oncontextmenu="triggerFileInput('fileInput7'); return false">
+        <img id="user8" src="user.jpg" onclick="toggleOpacity('user8')" oncontextmenu="triggerFileInput('fileInput8'); return false">
+        <img id="user9" src="user.jpg" onclick="toggleOpacity('user9')" oncontextmenu="triggerFileInput('fileInput9'); return false">
+        <img id="user10" src="user.jpg" onclick="toggleOpacity('user10')" oncontextmenu="triggerFileInput('fileInput10'); return false">
+        <img id="user11" src="user.jpg" onclick="toggleOpacity('user11')" oncontextmenu="triggerFileInput('fileInput11'); return false">
+        <img id="user12" src="user.jpg" onclick="toggleOpacity('user12')" oncontextmenu="triggerFileInput('fileInput12'); return false">
+        <img id="user13" src="user.jpg" onclick="toggleOpacity('user13')" oncontextmenu="triggerFileInput('fileInput13'); return false">
+        <img id="user14" src="user.jpg" onclick="toggleOpacity('user14')" oncontextmenu="triggerFileInput('fileInput14'); return false">
+        <img id="user15" src="user.jpg" onclick="toggleOpacity('user15')" oncontextmenu="triggerFileInput('fileInput15'); return false">
+        <img id="user16" src="user.jpg" onclick="toggleOpacity('user16')" oncontextmenu="triggerFileInput('fileInput16'); return false">
+        <img id="user17" src="user.jpg" onclick="toggleOpacity('user17')" oncontextmenu="triggerFileInput('fileInput17'); return false">
+        <img id="user18" src="user.jpg" onclick="toggleOpacity('user18')" oncontextmenu="triggerFileInput('fileInput18'); return false">
 
-        <p  style="font-size: 13px; color: white; text-align: center;">Versão (0.0.1) | Neto Moraes ®</p>
+        <p  style="font-size: 13px; color: white; text-align: center;">Versão (0.0.5) | Neto Moraes ®</p>
     </body>
 </html>

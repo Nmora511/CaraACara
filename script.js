@@ -1,6 +1,6 @@
-function toggleGrayscale(id) {
+function toggleOpacity(id) {
     var imagem = document.getElementById(id);
-    imagem.classList.toggle("grayscale");
+    imagem.classList.toggle("opacity");
 }
 
 function updateImage(imageId, input) {

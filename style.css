@@ -41,9 +41,8 @@ input{
    padding-left: 3%;
 }
 
-.grayscale {
-    transition-duration: 0.4s;
-    filter: grayscale(100%) blur(4px);
+.opacity{
+    opacity: 15%;
 }
 
 button{

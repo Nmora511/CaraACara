@@ -1,7 +1,7 @@
 function toggleOpacity(id) {
-    var imagem = document.getElementById(id);
-    imagem.classList.toggle("opacity");
-}
+    const imagem = document.getElementById(id);
+    imagem.classList.toggle('opacity');
+}   
 
 function updateImage(imageId, input) {
     var image = document.getElementById(imageId);
@@ -64,7 +64,7 @@ function sortearImagem() {
             toggleOpacity(id);
             }    
         });
-    }, 5000);
+    }, 2000);
 }
 
 function borderChosen(id){
@@ -76,3 +76,56 @@ function Help(id){
     var help = document.getElementById(id);
     help.classList.toggle('disappear');
 }
+
+function createInputs(){
+    const div = document.getElementById('input');
+    for(let i = 1; i <= 18; i++){
+        const input = document.createElement('input');
+        input.type = 'file';
+        input.id = 'fileInput' + i;
+        input.accept = 'image/*';
+        input.onchange = function () {
+            updateImage(`user${i}`, this);
+        };
+        div.appendChild(input);
+    }
+}
+
+function createImagesInGrid() {
+    const grid = document.querySelector('.grid');
+    
+    for (let i = 1; i <= 18; i++) {
+        const card = document.createElement('div');
+        card.classList.add('card');
+
+        const front = document.createElement('div');
+        front.classList.add('front');
+
+        const back = document.createElement('div');
+        back.classList.add('back');
+
+        const img = document.createElement('img');
+        img.id = `user${i}`;
+        img.src = 'user.jpg';
+        card.onclick = () => card.classList.toggle('verso');
+        img.oncontextmenu = (event) => {
+            event.preventDefault();
+            triggerFileInput(`fileInput${i}`);
+            return false;
+        };
+
+        const icon = document.createElement('img');
+        icon.src = 'icon.png';
+
+        grid.appendChild(card);
+        card.appendChild(front);
+        card.appendChild(back);
+        front.appendChild(icon);
+        back.appendChild(img);
+    }
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    createInputs();
+    createImagesInGrid();
+});

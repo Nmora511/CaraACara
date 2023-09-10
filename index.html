@@ -17,46 +17,27 @@
 
         <button class="button" id="helpb" onclick="Help('help')">?</button>
         
-        <input type="file" id="fileInput1"  accept="image/*" onchange="updateImage('user1', this)">
-        <input type="file" id="fileInput2"  accept="image/*" onchange="updateImage('user2', this)">
-        <input type="file" id="fileInput3"  accept="image/*" onchange="updateImage('user3', this)">
-        <input type="file" id="fileInput4"  accept="image/*" onchange="updateImage('user4', this)">
-        <input type="file" id="fileInput5"  accept="image/*" onchange="updateImage('user5', this)">
-        <input type="file" id="fileInput6"  accept="image/*" onchange="updateImage('user6', this)">
-        <input type="file" id="fileInput7"  accept="image/*" onchange="updateImage('user7', this)">
-        <input type="file" id="fileInput8"  accept="image/*" onchange="updateImage('user8', this)">
-        <input type="file" id="fileInput9"  accept="image/*" onchange="updateImage('user9', this)">
-        <input type="file" id="fileInput10"  accept="image/*" onchange="updateImage('user10', this)">
-        <input type="file" id="fileInput11"  accept="image/*" onchange="updateImage('user11', this)">
-        <input type="file" id="fileInput12"  accept="image/*" onchange="updateImage('user12', this)">
-        <input type="file" id="fileInput13"  accept="image/*" onchange="updateImage('user13', this)">
-        <input type="file" id="fileInput14"  accept="image/*" onchange="updateImage('user14', this)">
-        <input type="file" id="fileInput15"  accept="image/*" onchange="updateImage('user15', this)">
-        <input type="file" id="fileInput16"  accept="image/*" onchange="updateImage('user16', this)">
-        <input type="file" id="fileInput17"  accept="image/*" onchange="updateImage('user17', this)">
-        <input type="file" id="fileInput18"  accept="image/*" onchange="updateImage('user18', this)">
+        <div id="input"> </div>
 
         <img class="disappear" id="help" src="help.png" style="pointer-events: none;">
 
-        <img id="user1" src="user.jpg" onclick="toggleOpacity('user1')" oncontextmenu="triggerFileInput('fileInput1'); return false">
-        <img id="user2" src="user.jpg" onclick="toggleOpacity('user2')" oncontextmenu="triggerFileInput('fileInput2'); return false">
-        <img id="user3" src="user.jpg" onclick="toggleOpacity('user3')" oncontextmenu="triggerFileInput('fileInput3'); return false">
-        <img id="user4" src="user.jpg" onclick="toggleOpacity('user4')" oncontextmenu="triggerFileInput('fileInput4'); return false">
-        <img id="user5" src="user.jpg" onclick="toggleOpacity('user5')" oncontextmenu="triggerFileInput('fileInput5'); return false">
-        <img id="user6" src="user.jpg" onclick="toggleOpacity('user6')" oncontextmenu="triggerFileInput('fileInput6'); return false">
-        <img id="user7" src="user.jpg" onclick="toggleOpacity('user7')" oncontextmenu="triggerFileInput('fileInput7'); return false">
-        <img id="user8" src="user.jpg" onclick="toggleOpacity('user8')" oncontextmenu="triggerFileInput('fileInput8'); return false">
-        <img id="user9" src="user.jpg" onclick="toggleOpacity('user9')" oncontextmenu="triggerFileInput('fileInput9'); return false">
-        <img id="user10" src="user.jpg" onclick="toggleOpacity('user10')" oncontextmenu="triggerFileInput('fileInput10'); return false">
-        <img id="user11" src="user.jpg" onclick="toggleOpacity('user11')" oncontextmenu="triggerFileInput('fileInput11'); return false">
-        <img id="user12" src="user.jpg" onclick="toggleOpacity('user12')" oncontextmenu="triggerFileInput('fileInput12'); return false">
-        <img id="user13" src="user.jpg" onclick="toggleOpacity('user13')" oncontextmenu="triggerFileInput('fileInput13'); return false">
-        <img id="user14" src="user.jpg" onclick="toggleOpacity('user14')" oncontextmenu="triggerFileInput('fileInput14'); return false">
-        <img id="user15" src="user.jpg" onclick="toggleOpacity('user15')" oncontextmenu="triggerFileInput('fileInput15'); return false">
-        <img id="user16" src="user.jpg" onclick="toggleOpacity('user16')" oncontextmenu="triggerFileInput('fileInput16'); return false">
-        <img id="user17" src="user.jpg" onclick="toggleOpacity('user17')" oncontextmenu="triggerFileInput('fileInput17'); return false">
-        <img id="user18" src="user.jpg" onclick="toggleOpacity('user18')" oncontextmenu="triggerFileInput('fileInput18'); return false">
+        <div class="grid"></div>
 
-        <p  style="font-size: 13px; color: white; text-align: center;">Versão (0.0.5) - Alpha | Neto Moraes ®</p>
+        <div id="about">
+
+            <div id="version" style="flex: 80%;">
+                <p>Versão (0.1.0) - Beta | Neto Moraes ®</p>
+            </div>
+
+            <div id="saiba">
+                <p style="font-size: 18px; color: white;"> Saiba Mais: </p> 
+
+                <a href="https://github.com/Nmora511/CaraACara" target="_blank" style="height: 50%; vertical-align: middle; margin-right: 15px; margin-left: 10px;">
+                    <img id="github" src="github.png">
+                </a>
+            </div>
+            
+        </div>
+
     </body>
 </html>

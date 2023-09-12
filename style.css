@@ -107,7 +107,6 @@ h1 {
     background-position: center;
     transition: all 400ms ease;
     backface-visibility: hidden;
-    overflow: hidden;
 }
 
 .back img {

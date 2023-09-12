@@ -1,38 +1,61 @@
-function toggleOpacity(id) {
-    const imagem = document.getElementById(id);
-    imagem.classList.toggle('opacity');
-}   
+document.addEventListener('DOMContentLoaded', function() {
+    createInputs();
+    createImagesInGrid();
+});
 
-function updateImage(imageId, input) {
-    var image = document.getElementById(imageId);
-
-    if (input.files && input.files[0]) {
-        var reader = new FileReader();
-
-        reader.onload = function (e) {
-            image.src = e.target.result;
+function createInputs(){
+    const div = document.getElementById('input');
+    for(let i = 1; i <= 18; i++){
+        const input = document.createElement('input');
+        input.type = 'file';
+        input.id = 'fileInput' + i;
+        input.accept = 'image/*';
+        input.classList.add('input');
+        input.onchange = function () {
+            updateImage(`user${i}`, this);
         };
-
-        reader.readAsDataURL(input.files[0]);
+        div.appendChild(input);
     }
 }
 
-function triggerFileInput(inputId) {
-    var input = document.getElementById(inputId);
-    input.click();
-} 
+function createImagesInGrid() {
+    const grid = document.querySelector('.grid');
+    
+    for (let i = 1; i <= 18; i++) {
+        const card = document.createElement('div');
+        card.classList.add('card');
 
-function showContextMenu(event) {
-    event.preventDefault();
-    var contextMenu = document.getElementById('contextMenu');
-    contextMenu.style.display = 'block';
-    contextMenu.style.left = event.pageX + 'px';
-    contextMenu.style.top = event.pageY + 'px';
+        const front = document.createElement('div');
+        front.classList.add('front');
 
-    window.addEventListener('click', function hideContextMenu() {
-        contextMenu.style.display = 'none';
-        window.removeEventListener('click', hideContextMenu);
-    });
+        const back = document.createElement('div');
+        back.classList.add('back');
+
+        const name = document.createElement('p');
+        name.classList.add('names');
+        name.id = `nome${i}`;
+
+        const img = document.createElement('img');
+        img.id = `user${i}`;
+        img.src = 'user.jpg';
+        card.onclick = () => card.classList.toggle('verso');
+        img.oncontextmenu = (event) => {
+            event.preventDefault();
+            triggerFileInput(`fileInput${i}`);
+            updateNomes(`nome${i}`);
+            return false;
+        };
+
+        const icon = document.createElement('img');
+        icon.src = 'icon.png';
+
+        grid.appendChild(card);
+        card.appendChild(front);
+        card.appendChild(back);
+        front.appendChild(icon);
+        back.appendChild(img);
+        back.appendChild(name);
+    }
 }
 
 function sortearImagem() {
@@ -67,65 +90,50 @@ function sortearImagem() {
     }, 2000);
 }
 
+function toggleOpacity(id) {
+    const imagem = document.getElementById(id);
+    imagem.classList.toggle('opacity');
+}   
+
 function borderChosen(id){
     var imagem = document.getElementById(id);
     imagem.classList.toggle('chosen');
 }
 
-function Help(id){
+function help(id){
     var help = document.getElementById(id);
     help.classList.toggle('disappear');
 }
 
-function createInputs(){
-    const div = document.getElementById('input');
-    for(let i = 1; i <= 18; i++){
-        const input = document.createElement('input');
-        input.type = 'file';
-        input.id = 'fileInput' + i;
-        input.accept = 'image/*';
-        input.onchange = function () {
-            updateImage(`user${i}`, this);
+function triggerFileInput(inputImg) {
+    var input = document.getElementById(inputImg);
+    input.click();
+}
+
+function updateImage(imageId, input) {
+    var image = document.getElementById(imageId);
+
+    if (input.files && input.files[0]) {
+        var reader = new FileReader();
+
+        reader.onload = function (e) {
+            image.src = e.target.result;
         };
-        div.appendChild(input);
+
+        reader.readAsDataURL(input.files[0]);
     }
 }
 
-function createImagesInGrid() {
-    const grid = document.querySelector('.grid');
-    
-    for (let i = 1; i <= 18; i++) {
-        const card = document.createElement('div');
-        card.classList.add('card');
+function updateNomes(textId) {
+    const limite = 13;
+    const input = prompt('Digite o nome:');
+    const nome = document.getElementById(textId);
 
-        const front = document.createElement('div');
-        front.classList.add('front');
-
-        const back = document.createElement('div');
-        back.classList.add('back');
-
-        const img = document.createElement('img');
-        img.id = `user${i}`;
-        img.src = 'user.jpg';
-        card.onclick = () => card.classList.toggle('verso');
-        img.oncontextmenu = (event) => {
-            event.preventDefault();
-            triggerFileInput(`fileInput${i}`);
-            return false;
-        };
-
-        const icon = document.createElement('img');
-        icon.src = 'icon.png';
-
-        grid.appendChild(card);
-        card.appendChild(front);
-        card.appendChild(back);
-        front.appendChild(icon);
-        back.appendChild(img);
+    if(input.length > limite) {
+        alert('Nome maior que o limite de caracteres (13 caracteres)');
+        updateNomes(textId);
+    }
+    else {
+        nome.textContent = input;
     }
 }
-
-document.addEventListener('DOMContentLoaded', function() {
-    createInputs();
-    createImagesInGrid();
-});

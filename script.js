@@ -69,7 +69,7 @@ function sortearImagem() {
 
     idsImagens.forEach(id => {
         const imagem = document.getElementById(id);
-        if(imagem.classList.contains('chosen')){
+        if(imagem.parentElement.classList.contains('chosen')){
             borderChosen(id);
         }
         if (id != idImagemSorteada) {
@@ -83,7 +83,7 @@ function sortearImagem() {
     setTimeout(function () {
         idsImagens.forEach(id => {
             const imagem = document.getElementById(id);
-            if(imagem.classList.contains('opacity')){
+            if(imagem.parentElement.classList.contains('opacity')){
             toggleOpacity(id);
             }    
         });
@@ -92,12 +92,12 @@ function sortearImagem() {
 
 function toggleOpacity(id) {
     const imagem = document.getElementById(id);
-    imagem.classList.toggle('opacity');
+    imagem.parentElement.classList.toggle('opacity');
 }   
 
 function borderChosen(id){
     var imagem = document.getElementById(id);
-    imagem.classList.toggle('chosen');
+    imagem.parentElement.classList.toggle('chosen');
 }
 
 function help(id){

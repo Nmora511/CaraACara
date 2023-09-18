@@ -1,6 +1,6 @@
 @font-face {
     font-family: 'Nice Honey';
-    src: url('Nice\ Honey.ttf') format('truetype');
+    src: url('Nice\ Honey.otf') format('opentype');
 }
 
 body{

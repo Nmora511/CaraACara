@@ -11,11 +11,39 @@
 
     <body>
         <div id="header">
-        <button class="button" id="sorteio" onclick="sortearImagem()">Sortear</button>
+            <button class="button" id="sorteio" onclick="sortearImagem()">Sortear</button>
         
-        <h1>Cara a Cara</h1>
+            <h1 class="title">Cara a Cara</h1>
 
-        <button class="button" id="helpb" onclick="help('help')">?</button>
+            <button id="abrirModalBtn" class="button" onclick="criarTexto()">Código</button>
+    
+            <div id="meuModal" class="modal">
+
+                <div class="modal-conteudo">
+
+                    <span class="fechar-modal" id="fecharModalBtn" onclick="document.getElementById('meuModal').style.display='none'">&times;</span>
+                    
+                    <div class="copyNpaste" id="copycode">
+
+                        <p id="copy">Copie o código</p>
+
+                        <textarea readonly rows="1" cols="50" id="textcopy"></textarea>
+                        
+                        <button id="copyb" class="button cpb" onclick="copiarTexto()">Copiar</button>
+                    </div> 
+                    
+                    <div class="copyNpaste" id="pastecode">
+
+                        <p id="paste">Cole o código</p>
+
+                        <input type="text" autocomplete="off" id="codeinput">
+                        
+                        <button id="pasteb" class="button cpb" onclick="pasteCode()">Enviar</button>
+                    </div>    
+                </div>
+            </div>
+
+            <button class="button" id="helpb" onclick="help('help')">?</button>
         </div>
 
         <img class="disappear" id="help" src="help.png" style="pointer-events: none;">

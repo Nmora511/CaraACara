@@ -38,7 +38,10 @@ function createImagesInGrid() {
         const img = document.createElement('img');
         img.id = `user${i}`;
         img.src = 'user.jpg';
-        card.onclick = () => card.classList.toggle('verso');
+        card.onclick = () => {
+            card.classList.toggle('verso');
+            name.classList.toggle('versop');
+        };
         img.oncontextmenu = (event) => {
             event.preventDefault();
             triggerFileInput(`fileInput${i}`);
@@ -98,6 +101,41 @@ function toggleOpacity(id) {
 function borderChosen(id){
     var imagem = document.getElementById(id);
     imagem.parentElement.classList.toggle('chosen');
+}
+
+function criarTexto() {
+    let text = document.getElementById('textcopy');
+    let code = '';
+
+    for(let i=1; i<=18; i++){
+        let img = document.getElementById(`user${i}`);
+        let name = document.getElementById(`nome${i}`);
+
+        code += img.src + ' ' + name.textContent + ' ';
+    }
+    text.textContent = code;
+    document.getElementById('meuModal').style.display='block';
+}
+
+function copiarTexto() {
+    let textoCopiado = document.getElementById("textcopy");
+    textoCopiado.select();
+    document.execCommand("copy");
+}
+
+function pasteCode(){
+    let text = document.getElementById('codeinput').value;
+    const array = text.split(' ');
+
+    let j=0;
+    for(let i=1; i<=18; i++){
+        let img = document.getElementById(`user${i}`);
+        let name = document.getElementById(`nome${i}`);
+
+        img.src = array[j];
+        name.textContent = array[j+1];
+        j+=2;
+    }
 }
 
 function help(id){

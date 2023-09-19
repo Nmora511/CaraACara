@@ -3,6 +3,17 @@
     src: url('Nice\ Honey.otf') format('opentype');
 }
 
+::selection {
+    background: #2e20ec; 
+    color: #fff; 
+    border-radius: 15px;
+}
+
+::-moz-selection { 
+    background: #2e20ec; 
+    color: #fff;
+}
+
 body{
     background: #0D214F;
 }
@@ -19,6 +30,7 @@ body{
 }
 
 .button {
+    font-family: 'Nice Honey';
     position:absolute;
     display: inline-block;
     padding: 15px 25px;
@@ -44,11 +56,88 @@ body{
     transform: translateY(4px);
 }
 
-h1 {
+.title {
     font-size: 50px;
     font-family: 'Nice Honey';
     color: white;
     text-align: center;
+}
+
+#abrirModalBtn {
+    top: 3%;
+    right: 17%;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 3;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-conteudo {
+    border: 3px white solid;
+    top: 25%;
+    left: 25%;
+    width: 50%;
+    background-color: #003b92;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    position: relative;
+    color: white;
+    font-family: 'Nice Honey';
+    font-size: 30px;
+}
+
+#copy {
+    text-align: left;
+}
+
+#textcopy {
+    font-family: 'Nice Honey';
+    color: #fff;
+    border-radius: 15px;
+    margin-left: 15px;
+    background-color: #d90c0c;
+    resize: none;
+    border: 2px solid white;
+}
+
+.fechar-modal {
+    font-size: 60px;
+    position: absolute;
+    top: -10px;
+    right: 10px;
+    cursor: pointer;
+}
+
+.copyNpaste {
+    display: flex;
+    align-items: center;
+}
+
+.cpb {
+    right: 5%;
+    font-size: 20px;
+    padding: 15px;
+}
+
+#codeinput {
+    margin-left: 15px;
+    font-family: 'Nice Honey';
+    color: #fff;
+    border-radius: 15px;
+    background-color: #d90c0c;
+    border: 2px solid white;
+    width: 55%;
 }
 
 #helpb {
@@ -122,6 +211,10 @@ h1 {
     backface-visibility: hidden;
 }
 
+.versop {
+    opacity: 0;
+}
+
 .chosen {
     border: 4px solid #b81414;
 }
@@ -136,6 +229,7 @@ h1 {
     font-size: 40px;
     font-family: 'Nice Honey';
     margin: 0;
+    transition: all 400ms ease;
 }
 
 .front {

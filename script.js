@@ -102,30 +102,16 @@ function borderChosen(id){
     var imagem = document.getElementById(id);
     imagem.parentElement.classList.toggle('chosen');
 }
-
-function criarTexto() {
-    let text = document.getElementById('textcopy');
-    let code = '';
-
-    for(let i=1; i<=18; i++){
-        let img = document.getElementById(`user${i}`);
-        let name = document.getElementById(`nome${i}`);
-
-        code += img.src + ' ' + name.textContent + ' ';
-    }
-    text.textContent = code;
-    document.getElementById('meuModal').style.display='block';
+function txtToString(name){
+    let txt = '';
+    let locale = "/decks/" + name + ".txt";
+    fetch(locale)
+        .then(response => response.text())
+        .then(text => pasteTxt(text))
 }
 
-function copiarTexto() {
-    let textoCopiado = document.getElementById("textcopy");
-    textoCopiado.select();
-    document.execCommand("copy");
-}
-
-function pasteCode(){
-    let text = document.getElementById('codeinput').value;
-    const array = text.split(' ');
+function pasteTxt(text){
+    const array = text.split('|');
 
     let j=0;
     for(let i=1; i<=18; i++){
@@ -138,9 +124,53 @@ function pasteCode(){
     }
 }
 
-function help(id){
-    var help = document.getElementById(id);
-    help.classList.toggle('disappear');
+function resetImgs(){
+    for(let i=1; i<=18; i++){
+        let img = document.getElementById(`user${i}`);
+        let name = document.getElementById(`nome${i}`);
+
+        img.src = 'user.jpg';
+        name.textContent = null;
+    }
+}
+
+function criarTexto() {
+    let text = document.getElementById('textcopy');
+    let code = '';
+
+    for(let i=1; i<=18; i++){
+        let img = document.getElementById(`user${i}`);
+        let name = document.getElementById(`nome${i}`);
+
+        code += img.src + '|' + name.textContent + '|';
+    }
+    text.textContent = code;
+    toggleNone('meuModal');
+}
+
+function toggleNone(id){
+    document.getElementById(id).classList.toggle('modal-none');
+}
+
+function copiarTexto() {
+    let textoCopiado = document.getElementById("textcopy");
+    textoCopiado.select();
+    document.execCommand("copy");
+}
+
+function pasteCode(){
+    let text = document.getElementById('codeinput').value;
+    const array = text.split('|');
+
+    let j=0;
+    for(let i=1; i<=18; i++){
+        let img = document.getElementById(`user${i}`);
+        let name = document.getElementById(`nome${i}`);
+
+        img.src = array[j];
+        name.textContent = array[j+1];
+        j+=2;
+    }
 }
 
 function triggerFileInput(inputImg) {

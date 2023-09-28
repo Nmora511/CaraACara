@@ -104,7 +104,7 @@ function borderChosen(id){
 }
 function txtToString(name){
     let txt = '';
-    let locale = "/decks/" + name + ".txt";
+    let locale = "https://nmora511.github.io/CaraACara/decks/" + name + ".txt";
     fetch(locale)
         .then(response => response.text())
         .then(text => pasteTxt(text))

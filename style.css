@@ -3,6 +3,10 @@
     src: url('Nice\ Honey.otf') format('opentype');
 }
 
+::-webkit-scrollbar{
+    display: none;
+}
+
 ::selection {
     background: #2e20ec; 
     color: #fff; 

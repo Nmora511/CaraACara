@@ -50,7 +50,7 @@ function createImagesInGrid() {
         };
 
         const icon = document.createElement('img');
-        icon.src = 'icon.png';
+        icon.src = '/assets/icon.png';
 
         grid.appendChild(card);
         card.appendChild(front);

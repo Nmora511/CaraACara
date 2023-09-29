@@ -37,7 +37,7 @@ function createImagesInGrid() {
 
         const img = document.createElement('img');
         img.id = `user${i}`;
-        img.src = 'user.jpg';
+        img.src = '/assets/user.jpg';
         card.onclick = () => {
             card.classList.toggle('verso');
             name.classList.toggle('versop');
@@ -102,6 +102,7 @@ function borderChosen(id){
     var imagem = document.getElementById(id);
     imagem.parentElement.classList.toggle('chosen');
 }
+
 function txtToString(name){
     let txt = '';
     let locale = "https://nmora511.github.io/CaraACara/decks/" + name + ".txt";
@@ -129,7 +130,7 @@ function resetImgs(){
         let img = document.getElementById(`user${i}`);
         let name = document.getElementById(`nome${i}`);
 
-        img.src = 'user.jpg';
+        img.src = '/assets/user.jpg';
         name.textContent = null;
     }
 }

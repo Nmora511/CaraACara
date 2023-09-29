@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <title>Cara a Cara</title>
+        <link rel="stylesheet" href="style.css">
+        <script src="script.js"></script>
+        <link rel="icon" href="/assets/icon.png">
+
+    </head>
+
+    <body>
+        <div id="header">
+            <button class="button" id="sorteio" onclick="sortearImagem()">Sortear</button>
+        
+            <button class="button" id="decksbtn" onclick="toggleNone('ModalDecks')">Decks</button>
+
+            <div id="ModalDecks" class="modal">
+
+                <div id="DecksConteudo" class="modal-conteudo">
+
+                    <span class="Xmodal fechar-modal" id="fecharModalHlp" onclick="toggleNone('ModalDecks')">&times;</span>
+                    
+                    <h2>Decks Prontos</h2>
+
+                    <div id="DeckSteven" class="decks">
+                        <p>Steven Universo</p>
+                        <button class="button" id="stevenbtn" onclick="txtToString('steven')">Ativar</button>
+                    </div>
+
+                    <div id="DeckFnaf" class="decks">
+                        <p>Five Nights at Freddy's</p>
+                        <button class="button" id="fnafbtn" onclick="txtToString('fnaf')">Ativar</button>
+                    </div>
+
+                    <div id="DeckPercy" class="decks">
+                        <p>Percy Jackson</p>
+                        <button class="button" id="percybtn" onclick="txtToString('percy')">Ativar</button>
+                    </div>
+
+                    <div id="Reset" class="decks">
+                        <p>Resetar Configurações</p>
+                        <button class="button" id="resetbtn" onclick="resetImgs()">Reset</button>
+                    </div>
+
+
+                </div>
+            </div>
+
+            <h1 class="title">Cara a Cara</h1>
+
+            <button id="abrirModalBtn" class="button" onclick="criarTexto()">Código</button>
+    
+            <div id="meuModal" class="modal">
+
+                <div class="modal-conteudo">
+
+                    <span class="fechar-modal" id="fecharModalBtn" onclick="toggleNone('meuModal')">&times;</span>
+                    
+                    <div class="copyNpaste" id="copycode">
+
+                        <p id="copy">Copie o código</p>
+
+                        <textarea readonly rows="1" cols="50" id="textcopy"></textarea>
+                        
+                        <button id="copyb" class="button cpb" onclick="copiarTexto()">Copiar</button>
+                    </div> 
+                    
+                    <div class="copyNpaste" id="pastecode">
+
+                        <p id="paste">Cole o código</p>
+
+                        <input type="text" autocomplete="off" id="codeinput">
+                        
+                        <button id="pasteb" class="button cpb" onclick="pasteCode()">Enviar</button>
+                    </div>    
+                </div>
+            </div>
+
+            <button class="button" id="helpb" onclick="toggleNone('ModalHelp')">?</button>
+            
+            <div id="ModalHelp" class="modal">
+
+                <div class="modal-conteudo">
+
+                    <span id="Xhelp" class="Xmodal fechar-modal" id="fecharModalHlp" onclick="toggleNone('ModalHelp')">&times;</span>
+                        
+                    <h2 style="margin-bottom: 2px;">Bem Vindo ao</h2>
+                    <h2 style="margin-top: 0;">Cara a Cara</h2>
+
+                    <p>-Ao clilcar com o botão direito do mouse sobre alguma imagem, você poderá selecionar uma imagem de seus arquivos</p>
+                    <p>-Ao clicar com o botão esquerdo do mouse sobre alguma imagem você "abaixará" essa carta</p>
+                    <p>-Ao clicar no botão <strong>Código</strong> será disponibilizado um código que você pode enviar aos seus amigos para utilizarem seu baralho</p>
+                    <p>-Ao clicar no botão <strong>Sortear</strong> será sorteado uma das 18 personagens na tela, seu amigo deverá descobrí-la</p>
+
+                </div>
+            </div>
+
+        </div>
+
+        <div id="input"> </div>
+
+        <div class="grid"></div>
+
+        <div id="about">
+
+            <div id="version" style="flex: 80%;">
+                <p>Versão (0.2.0) - Beta | Neto Moraes ®</p>
+            </div>
+
+            <div id="saiba">
+                <p style="font-size: 18px; color: white;"> Saiba Mais: </p> 
+
+                <a href="https://github.com/Nmora511/CaraACara" target="_blank">
+                    <img id="github" src="/assets/github.png">
+                </a>
+            </div>
+            
+        </div>
+
+    </body>
+</html>

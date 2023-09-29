@@ -1,6 +1,6 @@
 @font-face {
     font-family: 'Nice Honey';
-    src: url('Nice\ Honey.otf') format('opentype');
+    src: url('assets/Nice\ Honey.otf') format('opentype');
 }
 
 ::-webkit-scrollbar{
@@ -137,10 +137,6 @@ body{
     overflow-y: scroll;
     max-height: 75%;
     top: 7%;
-    /*display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center; */
 }
 
 #ModalHelp p {

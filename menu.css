@@ -1,0 +1,93 @@
+body{
+    background-color: #0e204e;
+    overflow: hidden;
+}
+
+.circle{
+    background-color: #b81413;
+    border-radius: 50%;
+    height: 60%;
+    width: auto;
+    aspect-ratio: 1/1;
+    display: inline-block;
+    position: absolute;
+}
+
+#circle1{
+    top: -23%;
+    left: 7%;
+}
+
+#circle2{
+    left: -13%;
+    top: 5%;
+}
+
+#circle3{
+    left: -15%;
+    top: -20%;
+}
+
+#circle4{
+    right: 7%;
+    bottom: -23%;
+}
+
+#circle5{
+    right: -13%;
+    bottom: 5%;
+}
+
+#circle6{
+    right: -15%;
+    bottom: -20%;
+}
+
+.titlegame {
+    text-align: center;
+    font-family: 'Nice Honey';
+    font-size: 90px;
+    color: white;
+    left: 50%;
+}
+
+#playbtn {
+    font-size: 70px;
+    position: absolute;
+    right: 44.3%;
+}
+
+#versionp {
+    font-size: 13px; 
+    color: white;  
+    width: fit-content;
+    position: absolute;
+    bottom: 3%;
+    right: 44%;
+}
+
+.cardmenu {
+    border: white solid 4px;
+    border-radius: 18%;
+    height: 250px;
+    width: auto;
+    position: absolute;
+    z-index: 1;
+}
+
+#card1{
+    right: 33%;
+    top: 40%;
+    rotate: 30deg;
+}
+
+#card2{
+    right: 32%;
+    top: 45%;
+    rotate: 55deg;
+}
+
+#card3{
+    right: 33%;
+    rotate: 75deg;
+}

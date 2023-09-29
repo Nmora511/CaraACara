@@ -37,7 +37,7 @@ function createImagesInGrid() {
 
         const img = document.createElement('img');
         img.id = `user${i}`;
-        img.src = '/assets/user.jpg';
+        img.src = './assets/user.jpg';
         card.onclick = () => {
             card.classList.toggle('verso');
             name.classList.toggle('versop');
@@ -50,7 +50,7 @@ function createImagesInGrid() {
         };
 
         const icon = document.createElement('img');
-        icon.src = '/assets/icon.png';
+        icon.src = './assets/icon.png';
 
         grid.appendChild(card);
         card.appendChild(front);
@@ -130,7 +130,7 @@ function resetImgs(){
         let img = document.getElementById(`user${i}`);
         let name = document.getElementById(`nome${i}`);
 
-        img.src = '/assets/user.jpg';
+        img.src = './assets/user.jpg';
         name.textContent = null;
     }
 }

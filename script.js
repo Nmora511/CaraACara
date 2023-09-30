@@ -1,6 +1,10 @@
 document.addEventListener('DOMContentLoaded', function() {
     createInputs();
     createImagesInGrid();
+
+    fetch('./decks/steven.txt');
+    fetch('./decks/percy.txt');
+    fetch('./decks/fnaf.txt');
 });
 
 function createInputs(){
@@ -106,6 +110,7 @@ function borderChosen(id){
 function txtToString(name){
     let txt = '';
     let locale = "./decks/" + name + ".txt";
+    // let locale = "./decks/" + name + ".txt";
     fetch(locale)
         .then(response => response.text())
         .then(text => pasteTxt(text))

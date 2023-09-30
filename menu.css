@@ -46,23 +46,20 @@ body{
 .titlegame {
     position: absolute;
     font-family: 'Nice Honey';
-    font-size: 550%;
+    font-size: 9.1vh;
     color: white;
-    left: 40%;
-    top: 2%;
-    margin-top: 10%; 
-    margin-bottom: 0;
+    right: 39%;
+    top: 23%;
+    margin: 0;
 }
 
 #titlegame1{
     top: 33%;
-    left: 44%;
-    margin-top: 0; 
-    margin-bottom: 3%;
+    right: 44.3%;
 } 
 
 #playbtn {
-    font-size: 450%;
+    font-size: 7.5vh;
     position: absolute;
     right: 44.3%;
     top: 50%;
@@ -74,7 +71,7 @@ body{
     width: fit-content;
     position: absolute;
     bottom: 3%;
-    right: 44%;
+    right: 44.75%;
 }
 
 .cardmenu {
